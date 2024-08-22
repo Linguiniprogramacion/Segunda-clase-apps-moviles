@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>login {{ apellido }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <p *ngIf="edad < 35">Usuario :{{Persona.nombre}}</p>
+  <p>Apellido :{{Persona.apellido | lowercase}}</p>
+  
+  
+  <ion-item *ngFor="let m of listaP">
+    <ion-label><b> id: </b> {{m.id}}</ion-label>
+    <ion-label><b> Nombre: </b> {{m.nombre}}</ion-label>
+  </ion-item>
+
+  
+  <ion-item>
+    <ion-input label="Nombre de Usuario" labelPlacement="floating" placeholder="Ingrese su nombre de usuario :"
+     [(ngModel)]="usuario"></ion-input>
+  </ion-item>
+
+
+  <ion-button color="success" [routerLink]="['/home']">Success {{usuario}}</ion-button>
+  <ion-button color="warning">Warning</ion-button>
+  
+</ion-content>
